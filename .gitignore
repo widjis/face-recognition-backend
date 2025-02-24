@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+
+# Local development
+*.log
+.DS_Store
+
+# Environment variables
+.env
+
+# Model files and large data
+*.h5
+*.pkl
+*.model
+
+# Temporary files
+*.swp
+*.swo
+*~
