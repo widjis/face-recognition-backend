@@ -8,7 +8,7 @@ A FastAPI-based backend service for face recognition, providing endpoints for fa
 - Face analysis for detecting facial features
 - Face registration and storage
 - Face verification against registered faces
-- List management of registered faces
+- List management of registered faces and deletion
 
 ## Prerequisites
 
