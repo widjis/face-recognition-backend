@@ -56,3 +56,32 @@ class FaceRecognition:
             return [face['face'] for face in result]
         except Exception as e:
             raise ValueError(f"Face extraction failed: {str(e)}")
+
+    @staticmethod
+    def get_face_embedding(image):
+        """Generate face embedding using DeepFace.
+
+        Args:
+            image: Image file path or numpy array.
+
+        Returns:
+            Face embedding as numpy array.
+        """
+        try:
+            embedding = DeepFace.represent(
+                img_path=image,
+                model_name='ArcFace',
+                enforce_detection=False,  # Make face detection optional
+                detector_backend='opencv'
+            )
+            
+            # DeepFace.represent returns a list of embeddings, we take the first one
+            if isinstance(embedding, list):
+                embedding = embedding[0]
+            
+            # Extract the embedding vector
+            embedding_array = np.array(embedding['embedding'])
+            return embedding_array
+            
+        except Exception as e:
+            raise ValueError(f"Face embedding generation failed: {str(e)}")
