@@ -8,7 +8,7 @@ class FaceRecognition:
         try:
             result = DeepFace.verify(
                 img1_path=source_img,
-                img2_path=target_img,
+                img2_path=target_img, #tes
                 enforce_detection=True,
                 model_name='ArcFace'
             )
